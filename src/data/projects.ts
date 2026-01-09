@@ -1,0 +1,39 @@
+import type { Project } from "../types";
+
+export const projects: Project[] = [
+  {
+    id: 1,
+    title: "若瑟醫院 HIV 衛教對話系統",
+    description: "整合 OpenAI Realtime API、VLC 影片播放與 LINE Bot 的智能醫療衛教平台",
+    painPoint: "傳統 HIV 篩檢前衛教依賴人工諮詢，耗時且受限於人力資源，難以提供 24/7 服務與隱私保護",
+    solution: "開發 Python/Tkinter 桌面應用結合 LINE Bot 雙模式系統。整合 OpenAI Realtime API 實現即時語音對話、VLC 播放情境式衛教影片、FAISS + SQLite RAG 提供專業醫療問答。採用分層架構設計（Application → Controller → Service → DAO），透過 EventBus 事件驅動協調語音、影片、UI 同步。支援 7 階段標準化衛教流程（開場、動機詢問、篩檢歷史、風險評估、衛生教育、滿意度調查、總結）。LINE Bot 整合 Cloudflare Tunnel 自動 HTTPS 部署，提供遠距諮詢服務",
+    impact: "為 Bigbyte、雲林台大醫院、若瑟醫院等機構提供 24/7 自動化衛教服務，保護病患隱私，提升醫療資源效率",
+    tags: ["Python", "OpenAI Realtime API", "RAG", "FAISS", "LINE Bot", "Tkinter", "VLC", "Cloudflare Tunnel"],
+    featured: true,
+    coverImage: "",
+  },
+  {
+    id: 2,
+    title: "Norgo AI VTuber - 多模態虛擬主播系統",
+    description: "整合 Discord、VTube Studio、OBS 串流的全功能 AI 虛擬主播平台",
+    painPoint: "虛擬主播需要同時處理即時互動、表情控制、語音輸出與串流整合，傳統方案缺乏統一架構且技術門檻高",
+    solution: "開發模組化 AI VTuber 核心引擎，整合 LLM/STT/TTS Factories 提供彈性的模型切換（GPT-4o-mini、Whisper、Cartesia 語音克隆）。採用 FAISS RAG 實現會話記憶與知識檢索，透過 Event Manager 事件驅動架構協調 Discord Bot、VTube Studio API、OBS WebSocket 三大模組。支援 Cartesia 情緒 TTS 與語音克隆技術，實現角色個性化設定（personality.json）。整合 VB-Audio Virtual Cable 實現虛擬音訊路由，提供完整的直播級互動體驗",
+    impact: "打造可擴展的虛擬主播解決方案，降低技術門檻，支援多平台同時互動與專業級串流輸出",
+    tags: ["Python", "Discord Bot", "VTube Studio", "OBS", "LLM", "RAG", "FAISS", "Cartesia TTS", "WebSocket"],
+    featured: true,
+    coverImage: "",
+  },
+  {
+    id: 3,
+    title: "Campus E-Scooter 租賃系統",
+    description: "校園電動滑板車租賃平台，提供 Android 應用與 RESTful API 後端",
+    painPoint: "校園內缺乏便捷的短程交通工具租借系統，學生往返教學樓耗時且不便",
+    solution: "開發完整租賃生態系統，包含 Android 應用程式（Java）與 Spring Boot 後端 API。實作帳戶管理、即時車輛定位、租借流程、信用卡/會員卡支付整合、租借記錄追蹤、GPS 即時更新、電池電量管理等功能。提供完整的 RESTful API 文件與多種管理介面",
+    impact: "提升校園移動效率，簡化租借流程，支援即時車輛狀態追蹤與自動化計費",
+    tags: ["Android", "Java", "Spring Boot", "RESTful API", "GPS", "MySQL"],
+    featured: true,
+    coverImage: "",
+    githubUrl: "https://github.com/SA-Group1/escooter-api",
+  },
+];
+
