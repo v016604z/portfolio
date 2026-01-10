@@ -10,7 +10,7 @@ export const projects: Project[] = [
     impact: "為 Bigbyte、雲林台大醫院、若瑟醫院等機構提供 24/7 自動化衛教服務，保護病患隱私，提升醫療資源效率",
     tags: ["Python", "OpenAI Realtime API", "RAG", "FAISS", "LINE Bot", "Tkinter", "VLC", "Cloudflare Tunnel"],
     featured: true,
-    coverImage: "",
+    coverImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&h=675&fit=crop",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const projects: Project[] = [
     impact: "打造可擴展的虛擬主播解決方案，降低技術門檻，支援多平台同時互動與專業級串流輸出",
     tags: ["Python", "Discord Bot", "VTube Studio", "OBS", "LLM", "RAG", "FAISS", "Cartesia TTS", "WebSocket"],
     featured: true,
-    coverImage: "",
+    coverImage: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=1200&h=675&fit=crop",
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ export const projects: Project[] = [
     impact: "提升校園移動效率，簡化租借流程，支援即時車輛狀態追蹤與自動化計費",
     tags: ["Android", "Java", "Spring Boot", "RESTful API", "GPS", "MySQL"],
     featured: true,
-    coverImage: "",
+    coverImage: "https://images.unsplash.com/photo-1542131038-e8919ad7e53e?w=1200&h=675&fit=crop",
     githubUrl: "https://github.com/SA-Group1/escooter-api",
   },
 ];

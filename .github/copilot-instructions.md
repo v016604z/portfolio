@@ -12,20 +12,34 @@ Personal portfolio website built with React 19, TypeScript, and Tailwind CSS v4.
 ## Architecture Patterns
 
 ### Component Structure
-- All components in `src/components/` (Navbar, Hero, TechStack)
-- Types defined in `src/components/types.tsx` (NOT `src/types.tsx`)
-- Main app logic in `src/App.tsx` handles state and layout
+- **Components**: All UI components in `src/components/` (10 components: Navbar, Hero, TechStack, About, Contact, Footer, AllProjects, ProjectCard, ProjectModal, BackgroundAnimation)
+- **Types**: Centralized in `src/types/` directory with barrel export (`index.ts`)
+  - Import via `import type { Project } from "./types"` in App.tsx
+  - Each domain has its own file: `project.ts`, `personal.ts`, `skill.ts`, `education.ts`
+- **Data**: Static content in `src/data/` (projects, skills, education, personalInfo)
+- **Main app**: `src/App.tsx` handles layout composition and global state
 
 ### Type System
 ```tsx
 // Project interface emphasizes pain-point storytelling:
 interface Project {
+  id: number;
+  title: string;
+  description: string;
   painPoint: string;        // What problem was solved
-  fullDescription: string;  // Detailed solution narrative
+  solution: string;         // Detailed solution narrative
+  impact?: string;          // Real-world outcomes
   tags: string[];          // Tech stack used
+  featured: boolean;
+  coverImage?: string;
+  images?: string[];
+  video?: string;
+  githubUrl?: string;
+  demoUrl?: string;
+  caseStudyUrl?: string;
 }
 ```
-Always import `Project` type from `./types` (relative path in App.tsx).
+Always import types from `src/types` using barrel exports.
 
 ### Styling Conventions
 - **Color palette**: `slate-950` background, `slate-50` text, `cyan-500` accents
@@ -38,8 +52,21 @@ Always import `Project` type from `./types` (relative path in App.tsx).
   - Body: `text-slate-400` for secondary content
 
 ### State Management
-- Local useState for modal/dialog interactions (see `activeProject` in App.tsx)
+- Local useState for modal/dialog interactions (e.g., `activeProject` in App.tsx)
 - No external state library; keep it simple for portfolio scope
+- Components receive data via props from `src/data/` files
+
+### Data Layer Pattern
+Content is separated from components via `src/data/` directory:
+```tsx
+// src/data/projects.ts
+import type { Project } from "../types";
+export const projects: Project[] = [...];
+
+// src/App.tsx
+import { projects } from "./data/projects";
+```
+This pattern is used for projects, skills, education, and personalInfo.
 
 ## Development Workflow
 
@@ -55,6 +82,11 @@ npm run preview  # Preview production build
 - Uses project references: `tsconfig.app.json` (app) + `tsconfig.node.json` (Vite config)
 - Strict mode enabled with `noUnusedLocals` and `noUnusedParameters`
 - Module resolution: `bundler` mode (not `node` or `node16`)
+
+### ESLint Configuration
+- Flat config format (`eslint.config.js`) using `defineConfig` from `eslint/config`
+- Extends: ESLint recommended, TypeScript recommended, React Hooks, React Refresh (Vite)
+- Global ignores: `dist/` directory
 
 ## Critical Patterns
 
@@ -84,7 +116,8 @@ UI includes Chinese text (繁體中文) for Taiwan market. Maintain this languag
 4. Add to App.tsx layout if needed
 
 ### New Types
-Add to `src/components/types.tsx` (NOT `src/types.tsx` - this file doesn't exist)
+Add to `src/types/` directory (e.g., `src/types/newtype.ts`)
+Export from barrel: `src/types/index.ts`
 
 ### Styling New Sections
 Follow the existing pattern:
@@ -112,7 +145,7 @@ Follow the existing pattern:
 
 ## Common Gotchas
 
-1. **Types location**: Types are in `src/components/types.tsx`, not `src/types.tsx`
+1. **Types location**: Types are in `src/types/` directory with barrel export, not `src/components/types.tsx`
 2. **Tailwind version**: Using v4 (new PostCSS setup), not v3
 3. **ESLint config**: Flat config format (not `.eslintrc`), uses `defineConfig` from `eslint/config`
 4. **React version**: React 19 (latest) - check compatibility for new libraries
