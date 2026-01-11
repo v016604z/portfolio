@@ -1,8 +1,58 @@
-# React + TypeScript + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+個人作品集網站，展示專案開發經驗與技術能力。
 
-Currently, two official plugins are available:
+🌐 **Live Demo**: [https://v016604z.github.io/portfolio/](https://v016604z.github.io/portfolio/)
+
+## Tech Stack
+
+- **Frontend**: React 19 + TypeScript 5.9
+- **Styling**: Tailwind CSS v4
+- **Build Tool**: Vite 7 with SWC Fast Refresh
+- **Code Quality**: ESLint (flat config) + TypeScript strict mode
+
+## Features
+
+- 響應式設計，支援各種裝置
+- 專案展示採用痛點解決敘事方式
+- 互動式技術棧展示
+- 合作夥伴與教育背景展示
+- 優雅的 UI/UX 設計與動畫效果
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Project Structure
+
+```
+src/
+├── components/     # UI components
+├── data/          # Static content (projects, skills, etc.)
+├── types/         # TypeScript type definitions
+├── hooks/         # Custom React hooks
+└── assets/        # Static assets
+```
+
+## License
+
+MIT
+
+---
+
+## Original Vite Template Notes
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
