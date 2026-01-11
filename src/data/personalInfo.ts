@@ -8,7 +8,7 @@ export const personalInfo: PersonalInfo = {
   email: "v016604@gmail.com",
   location: "台灣",
   availability: true,
-  resumeUrl: "/resume.png",
+  resumeUrl: "resume.png",
   social: {
     github: "https://github.com/v016604z",
     linkedin: "https://linkedin.com/in/李柏達-liboda-09a659280",

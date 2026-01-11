@@ -11,11 +11,14 @@ export default function ProjectCard({ project, onClick, isRelevant = true }: Pro
     <div 
       onClick={onClick}
       className={`
-        group cursor-pointer bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden 
+        group cursor-pointer 
+        bg-gradient-to-br from-slate-900 to-slate-900/80
+        border border-slate-800 rounded-3xl overflow-hidden 
         transition-all duration-300
+        hover:shadow-2xl hover:shadow-cyan-500/10
         ${
           isRelevant 
-            ? 'hover:border-cyan-500/50 opacity-100 scale-100' 
+            ? 'hover:border-cyan-500/50 hover:-translate-y-1 opacity-100 scale-100' 
             : 'opacity-30 scale-95 hover:opacity-50'
         }
       `}
@@ -32,7 +35,7 @@ export default function ProjectCard({ project, onClick, isRelevant = true }: Pro
         </div>
       )}
       <div className="p-8">
-        <p className="text-cyan-500 text-xs font-mono mb-2">
+        <p className="text-cyan-500 text-sm font-mono mb-2">
           Solved: {project.painPoint.substring(0, 40)}...
         </p>
         <h4 className="text-2xl font-bold mb-4 group-hover:text-cyan-500 transition">

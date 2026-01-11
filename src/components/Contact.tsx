@@ -23,15 +23,15 @@ export default function Contact() {
       <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
         <a 
           href={`mailto:${personalInfo.email}`}
-          className="inline-block bg-cyan-500 text-slate-950 px-8 py-3 rounded-full font-bold hover:bg-cyan-400 transition"
+          className="inline-flex items-center justify-center min-w-[160px] min-h-[44px] bg-cyan-500 text-slate-950 px-8 py-3 rounded-full font-bold hover:bg-cyan-400 transition"
         >
           發送郵件
         </a>
         {personalInfo.resumeUrl && (
           <a 
-            href={personalInfo.resumeUrl}
+            href={`${import.meta.env.BASE_URL}${personalInfo.resumeUrl}`}
             download
-            className="inline-block border border-slate-700 text-slate-300 px-8 py-3 rounded-full font-bold hover:border-cyan-500 hover:text-cyan-500 transition"
+            className="inline-flex items-center justify-center min-w-[160px] min-h-[44px] border border-slate-700 text-slate-300 px-8 py-3 rounded-full font-bold hover:border-cyan-500 hover:text-cyan-500 transition"
           >
             下載履歷
           </a>

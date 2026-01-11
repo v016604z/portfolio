@@ -7,7 +7,7 @@ export default function Hero() {
         {personalInfo.availability ? "Available for new opportunities" : "Currently unavailable"}
       </h2>
       <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-        你好，我是 <span className="text-slate-400">{personalInfo.name}</span>
+        你好，我是 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">{personalInfo.name}</span>
       </h1>
       <p className="max-w-2xl mx-auto text-slate-400 text-lg md:text-xl leading-relaxed">
         {personalInfo.tagline}

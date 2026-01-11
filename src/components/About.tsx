@@ -30,7 +30,7 @@ export default function About() {
         </div>
         <div className="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden aspect-square">
           <img 
-            src="/profile.jpg"
+            src={`${import.meta.env.BASE_URL}profile.jpg`}
             alt={personalInfo.name}
             className="w-full h-full object-cover"
           />
