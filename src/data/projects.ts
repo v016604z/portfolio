@@ -35,5 +35,18 @@ export const projects: Project[] = [
     coverImage: "https://images.unsplash.com/photo-1542131038-e8919ad7e53e?w=1200&h=675&fit=crop",
     githubUrl: "https://github.com/SA-Group1/escooter-api",
   },
+  {
+    id: 4,
+    title: "個人作品集網站",
+    description: "採用 React 19 + TypeScript + Tailwind v4 打造的現代化個人作品集",
+    painPoint: "傳統作品集網站缺乏互動性，難以有效展示技術能力與專案成果的關聯性，訪客無法快速了解技術棧的實際應用場景",
+    solution: "使用最新前端技術棧構建高效能 SPA 應用。採用 Vite 7 + React SWC 提供極速開發體驗，整合 Tailwind CSS v4 PostCSS 實現模組化樣式管理。設計互動式技能展示系統，點擊技能即可篩選相關專案，透過視覺反饋（漸層色系、動態縮放、發光效果）強化使用者體驗。實作專案分類架構（Featured/All Projects）、痛點導向敘事（painPoint → solution → impact）、響應式設計與暗色系 UI。使用 TypeScript 嚴格模式確保型別安全，整合 ESLint flat config 維持代碼品質。透過 GitHub Actions 自動化部署至 GitHub Pages",
+    impact: "打造專業且具互動性的線上履歷，有效展示全端開發與 UI/UX 設計能力，透過技能-專案關聯系統提升訪客理解效率",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Vite", "Git"],
+    featured: false,
+    coverImage: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&h=675&fit=crop",
+    githubUrl: "https://github.com/v016604z/portfolio",
+    demoUrl: "https://v016604z.github.io/portfolio",
+  },
 ];
 

@@ -1,12 +1,17 @@
 import { personalInfo } from "../data/personalInfo";
 import { education } from "../data/education";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 export default function About() {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
     <section 
       id="about" 
-      className="py-20 px-6 max-w-6xl mx-auto opacity-0 animate-fade-in"
-      style={{ animationDelay: '0.2s' }}
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`py-20 px-6 max-w-6xl mx-auto transition-all duration-800 ${
+        isVisible ? 'scroll-visible' : 'scroll-hidden'
+      }`}
     >
       <h3 className="text-slate-500 text-sm font-bold uppercase tracking-widest mb-8">關於我</h3>
       <div className="grid md:grid-cols-2 gap-12 items-center mb-16">

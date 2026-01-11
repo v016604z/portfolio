@@ -1,8 +1,17 @@
 import { personalInfo } from "../data/personalInfo";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 export default function Contact() {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section id="contact" className="py-20 px-6 max-w-4xl mx-auto text-center opacity-0 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+    <section 
+      id="contact" 
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`py-20 px-6 max-w-4xl mx-auto text-center transition-all duration-800 ${
+        isVisible ? 'scroll-visible' : 'scroll-hidden'
+      }`}
+    >
       <h3 className="text-slate-500 text-sm font-bold uppercase tracking-widest mb-8">聯絡我</h3>
       <h4 className="text-4xl md:text-5xl font-bold text-white mb-6">
         讓我們一起合作

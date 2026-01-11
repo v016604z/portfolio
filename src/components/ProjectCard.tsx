@@ -3,13 +3,22 @@ import type { Project } from "../types";
 interface ProjectCardProps {
   project: Project;
   onClick: () => void;
+  isRelevant?: boolean;
 }
 
-export default function ProjectCard({ project, onClick }: ProjectCardProps) {
+export default function ProjectCard({ project, onClick, isRelevant = true }: ProjectCardProps) {
   return (
     <div 
       onClick={onClick}
-      className="group cursor-pointer bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all"
+      className={`
+        group cursor-pointer bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden 
+        transition-all duration-300
+        ${
+          isRelevant 
+            ? 'hover:border-cyan-500/50 opacity-100 scale-100' 
+            : 'opacity-30 scale-95 hover:opacity-50'
+        }
+      `}
     >
       {project.coverImage ? (
         <img 
