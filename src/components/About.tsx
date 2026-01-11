@@ -32,7 +32,7 @@ export default function About() {
           <img 
             src={`${import.meta.env.BASE_URL}profile.jpg`}
             alt={personalInfo.name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
         </div>
       </div>

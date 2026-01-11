@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TechStack from "./components/TechStack";
 import About from "./components/About";
+import Partners from "./components/Partners";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import AllProjects from "./components/AllProjects";
@@ -59,6 +60,7 @@ export default function App() {
 
       <AllProjects selectedSkill={selectedSkill} />
       <About />
+      <Partners />
       <Contact />
 
       {/* 詳情彈窗 (Modal) */}

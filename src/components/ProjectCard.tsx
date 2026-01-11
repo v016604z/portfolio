@@ -24,11 +24,13 @@ export default function ProjectCard({ project, onClick, isRelevant = true }: Pro
       `}
     >
       {project.coverImage ? (
-        <img 
-          src={project.coverImage} 
-          alt={project.title}
-          className="aspect-video w-full object-cover"
-        />
+        <div className="aspect-video w-full bg-slate-950 flex items-center justify-center">
+          <img 
+            src={project.coverImage} 
+            alt={project.title}
+            className="w-full h-full object-contain"
+          />
+        </div>
       ) : (
         <div className="aspect-video bg-slate-800 flex items-center justify-center">
           <span className="text-slate-600">專案封面</span>
@@ -41,7 +43,7 @@ export default function ProjectCard({ project, onClick, isRelevant = true }: Pro
         <h4 className="text-2xl font-bold mb-4 group-hover:text-cyan-500 transition">
           {project.title}
         </h4>
-        <p className="text-slate-400 text-sm mb-4 line-clamp-2">
+        <p className="text-slate-400 text-base mb-4 line-clamp-2">
           {project.description}
         </p>
         <div className="flex gap-2 flex-wrap">

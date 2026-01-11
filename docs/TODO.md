@@ -13,35 +13,7 @@
 
 ## 📋 待辦清單
 
-### 🔥 高優先級
-
-#### 自動同步 GitHub 專案 🆕
-- [ ] 建立 `.github/workflows/sync-projects.yml`
-- [ ] 建立 `scripts/sync-projects.js` 同步腳本
-- [ ] 在 GitHub repos 添加 `portfolio-featured` topic 標記
-- [ ] 規範 repo description 格式：`痛點: XXX | 解決方案: YYY`
-- [ ] 測試自動同步流程
-- [ ] （選配）實作混合方案：手動精選 + 自動補充
-
-**預期效果：**
-- 新專案自動出現在 portfolio
-- GitHub 更新 → portfolio 自動更新
-- 減少手動維護成本
-
-**技術細節：**
-```yaml
-觸發條件: 每週日凌晨 + 手動觸發
-處理流程: 
-  1. 使用 GitHub API 抓取 repos
-  2. 過濾 portfolio-featured topic
-  3. 轉換為 Project 格式
-  4. 更新 src/data/projects.ts
-  5. Commit & Push 觸發部署
-```
-
----
-
-### 🎨 設計優化（中優先級）
+### 🎨 設計優化（高優先級）
 
 #### 1. 字體系統完善
 - [ ] 在 `tailwind.config.js` 定義完整字級系統
@@ -102,7 +74,6 @@
 - ✅ 自動化測試
 - ✅ 定時任務 (Cron)
 - ✅ 自動發布
-- ✅ 資料同步（待實作）
 
 ### 資安最佳實踐
 - ✅ 啟用 Dependabot alerts
@@ -115,7 +86,6 @@
 
 ## 💡 未來想法
 
-- 考慮整合 Notion API 作為 CMS
 - 考慮新增多語言支援（中/英）
 - 考慮實作深色/淺色模式切換
 - 考慮新增專案篩選進階功能

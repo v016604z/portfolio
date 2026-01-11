@@ -28,13 +28,17 @@ export default function TechStack({ selectedSkill, onSkillClick }: TechStackProp
   };
 
   return (
-    <section className="py-20 px-6 max-w-6xl mx-auto opacity-0 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+    <section className="py-20 px-6 max-w-6xl mx-auto opacity-0 animate-fade-in" style={{ animationDelay: '0.4s' }}>
       <h3 className="text-slate-500 text-sm font-bold uppercase tracking-widest mb-8">Technical Stack</h3>
-      <p className="text-slate-400 text-sm mb-8">點擊技能查看相關專案</p>
+      <p className="text-slate-400 text-base mb-8">點擊技能查看相關專案</p>
       
       <div className="space-y-8">
-        {Object.entries(groupedSkills).map(([category, categorySkills]) => (
-          <div key={category}>
+        {Object.entries(groupedSkills).map(([category, categorySkills], index) => (
+          <div 
+            key={category}
+            className="opacity-0 animate-slide-left"
+            style={{ animationDelay: `${0.6 + index * 0.15}s` }}
+          >
             <h4 className="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-4">
               {category}
             </h4>
